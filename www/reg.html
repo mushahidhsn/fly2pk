@@ -4,7 +4,12 @@
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+         <!--this is the line that has been commented just to increase the viewable screen resolution-->
+        <!--<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />-->
+        <!--commented to this part-->
+        <!--this i the new line -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, target-densitydpi=medium-dpi, user-scalable=0" />
+        <!--this i the new line -->
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <link rel="stylesheet" type="text/css" href="css/overrides.css" />
         <script src="//code.jquery.com/jquery-1.8.2.min.js"></script>
@@ -12,6 +17,9 @@
 		<script src="www/js/jquery-1.8.2.min.js"></script>
         <script src="js/jquery-1.8.2.min.js"></script>
         <script src="jquery-1.8.2.min.js"></script>
+        <script src="phonegap.js"></script>
+		<script src="cordova.js"></script>
+        <script src="js/post.js"></script>
         <title>Registration</title>
     </head>
 <body>
@@ -33,14 +41,15 @@
     </form>
 <!--    <input type="button" id="btn-chk" value="button"/>
     -->
+     <input type="button" id="btn-chk" value="email"/>
+    <input type="button" id="btn-chk1" value="username"/>
+    <input type="button" id="btn-chk2" value="password"/>
   <br>    
 <span id="result"></span>
     <br><br><br><br>
     checking values
     
-    <input type="button" id="btn-chk" value="email"/>
-    <input type="button" id="btn-chk1" value="username"/>
-    <input type="button" id="btn-chk2" value="password"/>
+   
     
 	</div>
 </body>
@@ -53,7 +62,8 @@
 		   var e_mail =  $('#email-id').val();
 		var u_sername =  $('#username-id').val();
 		var p_assword =  $('#password-id').val();
-				var url ='http://localhost/mobile_flytopk/save.php';
+				//var url ='http://localhost/mobile_flytopk/save.php';
+				var url ='http://www.fly2pk.co.uk/save.php';
 				$.ajax(url,{
 						data: {					
 									   email: e_mail,
