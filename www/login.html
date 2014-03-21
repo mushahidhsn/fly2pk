@@ -18,17 +18,41 @@
     </head>
 <body>
     <div class="app">
-            <h1>Fly2PK</h1>
-    <label>UserName</label>
-    <input type="text" name="username" /><br>
-    <label>Password</label>
-    <input type="text" name="password" /><br>
-	<button>Login</button><br>
-    <label>Not a User Yet!</label>
-   <a href="reg.html"><button>Register</button></a>
-     
-    
-    
+    	<h1>Login</h1>
+    		<!--<form method="post"  id="form-login">-->
+            <form>         
+    			<label>Username:</label>
+    			<input type="text" name="username"  id="login" placeholder="usernane"/><br>
+    			<label>Password:</label>
+    			<input type="text" name="password" id="pass"/><br>
+				<input type="submit" value="submit">
+    		</form>
+    	<br>
+    		<label>Not a User Yet!</label>
+        <br>    
+    		<a href="reg.html"><button>Register</button></a>
     </div>  
 </body>
 </html>
+<script>
+ $(document).ready(function(){
+	//here we will get the values from the forms
+	$('form').submit(function(){ 
+		var u_sername =  $('#login').val();
+		var p_assword =  $('#pass').val();
+				//var url ='http://localhost/mobile_flytopk/save.php';
+				var url ='http://www.fly2pk.co.uk/loginp.php';
+				$.ajax(url,{
+						data: {					
+									username: u_sername,
+									password: p_assword
+						},//data
+						type: "POST",
+						success: function(data){
+									  alert (data);
+									  //document.location.href = 'http://localhost/mobile_flytopk/afterlogin.html';
+						}
+				});//end of ajax				
+	});//end of onclick button or submit form 		
+});//end of document.ready
+</script>
