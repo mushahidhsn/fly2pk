@@ -72,8 +72,13 @@
 						},//data
 						type: "POST",
 						success: function(data){
-									  alert (data);
-									  alert("records entered");
+									  
+									  if("SUCCESS"==data){                     
+                    						alert (data);
+											alert("Login Success!!");
+              						  } else {                    
+                   	 						alert("Invalid Login!!"); 
+                					  }
 						}
 				});//end of ajax				
 	});//end of onclick button or submit form 		
