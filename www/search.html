@@ -17,18 +17,17 @@
     </head>
 <body>
     <div class="app">
-    		
+    		<input type="submit" value="submit" onClick="myFunction"/>
             
        <script>
-   $(function() {
-      $.ajax("https://api.github.com/legacy/repos/search/javascript").done(function(data) {
-         var i, repo;
-         $.each(data.repositories, function (i, repo) {
-            $("#allRepos").append("<p><a href='" + repo.url + "'>" + repo.name 
-                                     + "</a><br>"+ repo.description + "</p>");
-         });
-      });
-   });
+ function myFunction(){
+ var xhr = new XMLHttpRequest();
+xhr.open("GET", "http://www.codecademy.com/", false);
+// Add your code below!
+xhr.send();
+alert(xhr.status);
+alert(xhr.statusText);
+}
 </script>     
          <div id="allRepos"></div>   
              
