@@ -49,15 +49,20 @@
 						type: "POST",
 						success: function(data){
 									  alert (data);
-
-if("SUCCESS"==data){                     
-                    alert("Login Success!!");
-                } else {                    
-                    alert("Invalid Login!!"); 
-                }
+									   if(data){
+										 	 alert (data);                     
+                    						alert("Login Success!!");
+                						} else {                    
+                    						alert("Invalid Login!!"); 
+                						}
 
 									  //document.location.href = 'http://localhost/mobile_flytopk/afterlogin.html';
-						}
+						},
+						error: function(){
+				 
+				 alert('There was an error adding your comment');
+
+       		}
 				});//end of ajax				
 	});//end of onclick button or submit form 		
 });//end of document.ready
