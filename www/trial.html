@@ -16,21 +16,7 @@
         <title>Home</title>
     </head>
 <body>
-    <div data-role="page" id="index">
-    <div data-theme="a" data-role="header">
-        <h3>
-            First Page
-        </h3>
-        <a href="#second" class="ui-btn-right">Next</a>
-    </div>
-
-    <div data-role="content">
-        <div id="test"></div>
-    </div>
-
-    <div data-theme="a" data-role="footer" data-position="fixed">
-
-    </div>
+    <input type="button" onClick="makeRequest()" value="Just Click ME" />
 </div>
 </body>
 </html>
@@ -38,9 +24,17 @@
 
 
 <script>
-$(document).on('pagebeforeshow', '#trail', function(){       
-    $(document).ready(function () {
-        $('#test').weatherfeed(['UKXX0085','EGXX0011','UKXX0061','CAXX0518','CHXX0049']);
-    });
-});
+function makeRequest() {
+    var request = new XMLHttpRequest();
+    request.open("GET", "http://www.grouped.com/api?f=user_exists&email=ryan@ensomniac.com", true);
+    request.onreadystatechange = function() {
+        if (request.readyState == 4) {
+            if (request.status == 200 || request.status == 0) {
+                console.log(request);
+            }
+        }
+    }
+    request.send();
+}
+
 </script>
