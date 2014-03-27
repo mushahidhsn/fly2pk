@@ -1,53 +1,46 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>jQM Complex Demo</title>
-    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; minimum-scale=1.0; user-scalable=no; target-densityDpi=device-dpi"/>
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
-    <link rel="stylesheet" href="http://www.zazar.net/developers/jquery/zweatherfeed/example.css" />    
-    <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>   
-    <script src="http://www.zazar.net/developers/jquery/zweatherfeed/jquery.zweatherfeed.min.js"></script>       
-</head>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+         <!--this is the line that has been commented just to increase the viewable screen resolution-->
+        <!--<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />-->
+        <!--commented to this part-->
+        <!--this i the new line -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, target-densitydpi=medium-dpi, user-scalable=0" />
+        <!--this i the new line -->        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel="stylesheet" type="text/css" href="css/overrides.css" />
+        <script src="phonegap.js"></script>
+		<script src="cordova.js"></script>
+        <title>Home</title>
+    </head>
 <body>
     <div data-role="page" id="index">
-        <div data-theme="a" data-role="header">
-            <h3>
-                First Page
-            </h3>
-            <a href="#second" class="ui-btn-right">Next</a>
-        </div>
+    <div data-theme="a" data-role="header">
+        <h3>
+            First Page
+        </h3>
+        <a href="#second" class="ui-btn-right">Next</a>
+    </div>
 
-        <div data-role="content">
-            <div id="test"></div>
-        </div>
+    <div data-role="content">
+        <div id="test"></div>
+    </div>
 
-        <div data-theme="a" data-role="footer" data-position="fixed">
+    <div data-theme="a" data-role="footer" data-position="fixed">
 
-        </div>
-    </div> 
-    <div data-role="page" id="second">
-        <div data-theme="a" data-role="header">
-            <h3>
-                Second Page
-            </h3>
-            <a href="#index" class="ui-btn-left">Back</a>
-        </div>
-
-        <div data-role="content">
-
-        </div>
-
-        <div data-theme="a" data-role="footer" data-position="fixed">
-
-        </div>
-    </div>    
+    </div>
+</div>
 </body>
-</html>   
+</html>
+
+
 
 <script>
-   $(document).on('pagebeforeshow', '#index', function(){       
-        $(document).ready(function () {
-            $('#test').weatherfeed(['UKXX0085','EGXX0011','UKXX0061','CAXX0518','CHXX0049']);
-        });
+$(document).on('pagebeforeshow', '#trail', function(){       
+    $(document).ready(function () {
+        $('#test').weatherfeed(['UKXX0085','EGXX0011','UKXX0061','CAXX0518','CHXX0049']);
     });
+});
 </script>
