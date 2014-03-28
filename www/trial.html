@@ -7,7 +7,7 @@
 $(document).ready(function() {
 $('#btn_1').click(function() {
 $.get(
-    "http://openweathermap.org/data/2.3/forecast/",
+    "http://api.openweathermap.org/",
     {cityID : 52490, APPID : '313ecea2158377dc3dc08b17080db865'},
     function(data) {
        alert('page content: ' + data);
