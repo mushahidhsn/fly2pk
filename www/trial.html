@@ -4,6 +4,8 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
 </script>
 <script>
+$(document).ready(function() {
+$('#btn_1').click(function() {
 $.get(
     "http://openweathermap.org/data/2.3/forecast/",
     {cityID : 52490, APPID : '313ecea2158377dc3dc08b17080db865'},
@@ -11,11 +13,13 @@ $.get(
        alert('page content: ' + data);
     }
 );
+});
+});
 </script>
 </head>
 <body>
 
-<button>Get JSON data</button>
+<button id="btn_1">Get JSON data</button>
 <div></div>
 
 </body>
