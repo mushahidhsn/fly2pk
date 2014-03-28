@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, height=device-height, width=device-width" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel="stylesheet" type="text/css" href="css/overrides.css" />
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
 </script>
 <script>
+/*
 $(document).ready(function() {
 $('#btn_1').click(function() {
 $.get(
@@ -13,6 +18,77 @@ $.get(
        alert('page content: ' + data);
     }
 );
+});
+});*/
+
+
+</script>
+
+<script>
+$(document).ready(function() {
+$('#btn_1').click(function() {
+
+var weather = ""
+        var ajax_call = "http://api.openweathermap.org/data/2.5/weather?lat=35&lon=139";
+        $.ajax({
+           type: "GET",
+           url: ajax_call,
+           dataType: "jsonp",
+           success: function(response){
+                $.each(response, function(key, value) {
+                   //alert(key+"====="+value)
+                    if(key == "coord"){
+                        weather += '<div><strong>coord<strong><div>';
+                        $.each(value, function(key, value) {
+                            if(key == "lon")
+                               weather += '<div>lon: '+value+'<div>';
+                           if(key == "lat")
+                               weather += '<div>lat: '+value+'<div>';
+                        });
+                    }
+                    if(key == "weather"){
+                        weather += '<div><strong>weather<strong><div>';
+                        $.each(value, function(key, value) {
+
+                           if(value.id)
+                               weather += '<div>id: '+value.id+'<div>';
+                           if(value.main)
+                               weather += '<div>main: '+value.main+'<div>';
+                           if(value.description)
+                               weather += '<div>description: '+value.description+'<div>';                             
+
+                        });                           
+                    }
+                    if(key == "main"){
+                        weather += '<div><strong>main<strong><div>';
+                        $.each(value, function(key, value) {
+                            if(key == "temp")
+                               weather += '<div>temp: '+value+'<div>';
+                           if(key == "temp_min")
+                               weather += '<div>temp_min: '+value+'<div>';
+                           if(key == "temp_max")
+                               weather += '<div>temp_max: '+value+'<div>';
+                           if(key == "pressure")
+                               weather += '<div>pressure: '+value+'<div>';
+                           if(key == "sea_level")
+                               weather += '<div>sea_level: '+value+'<div>';
+                           if(key == "grnd_level")
+                               weather += '<div>grnd_level: '+value+'<div>';
+                           if(key == "humidity")
+                               weather += '<div>humidity: '+value+'<div>';
+
+                        });                           
+                    }
+
+                });
+                alert(weather) 
+                console.log(weather)
+
+           }
+        }).done(function() {
+
+        })
+
 });
 });
 </script>
