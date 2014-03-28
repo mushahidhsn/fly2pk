@@ -4,16 +4,13 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
 </script>
 <script>
-$(document).ready(function(){
-  $("button").click(function(){
-    var url = "http://api.openweathermap.org/data/2.5/weather?q=London,uk"; 
-	$.getJSON(url ,function(result){
-      $.each(result, function(i, field){
-        $("div").append(field + " ");
-      });
-    });
-  });
-});
+$.get(
+    "http://openweathermap.org/data/2.3/forecast/",
+    {cityID : 52490, APPID : '313ecea2158377dc3dc08b17080db865'},
+    function(data) {
+       alert('page content: ' + data);
+    }
+);
 </script>
 </head>
 <body>
