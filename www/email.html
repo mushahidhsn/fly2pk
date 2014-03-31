@@ -20,52 +20,80 @@
         <script src="phonegap.js"></script>
 		<script src="cordova.js"></script>
         <script src="js/post.js"></script>
-        <title>Registration</title>
+        <title>Email</title>
     </head>
 <body>
-
     <div class="app">
-    <h1>Registration</h1>
+            <h1>Fly2PK</h1>
+             <h1>Registration</h1>
     <div id="landmark-1" data-landmark-id="1">
     <form>
-    	<label>Email</label><br>
+    	<label>Your Email Address:</label><br>
     	<input type="text" name="email" id="email-id"/><br>
-    	<label>UserName</label><br>
-    	<input type="text" name="username" id="username-id"/><br>
-    	<label>Password</label><br>
-    	<input type="text" name="password" id="password-id"/>
+    	
+        <label>Name</label><br>
+    	<input type="text" name="name" id="name-id"/><br>
+    	
+        <label>Flight From:</label><br>
+    	<input type="text" name="flightfrom" id="flightfrom-id"/><br>
+    	
+        <label>Flight To:</label><br>
+    	<input type="text" name="flightto" id="flightto-id"/><br>
+    	
+        <label>Depart Date:</label><br>
+    	<input type="text" name="departdate" id="departdate-id"/><br>
+    	
+        <label>Return Date:</label><br>
+    	<input type="text" name="returndate" id="returndate-id"/><br>
+    	
+        <label>Passangers:</label><br>
+    	<input type="text" name="passangers" id="passangers-id"/><br>
+    	        
+        <label>Message</label><br>
+    	<input type="text" name="message" id="message-id"/>
         <br>
     	<input type="submit" value="submit">
 	 
     </form>
-<!--    <input type="button" id="btn-chk" value="button"/>
-    -->
-     <input type="button" id="btn-chk" value="email"/>
+
+    <input type="button" id="btn-chk" value="email"/>
     <input type="button" id="btn-chk1" value="username"/>
     <input type="button" id="btn-chk2" value="password"/>
   <br>    
 <span id="result"></span>
-    <br><br><br><br>
+    <br><br>  
     checking values
 
 	</div>
+           
+    </div>  
 </body>
 </html>
-
 <script>
+//this script will send an email to the server and further actions be taken by administrators
  $(document).ready(function(){
 	//here we will get the values from the forms
 	$('form').submit(function(){ 
-		   var e_mail =  $('#email-id').val();
-		var u_sername =  $('#username-id').val();
-		var p_assword =  $('#password-id').val();
+		     var e_mail =  $('#email-id').val();
+			  var n_ame =  $('#name-id').val();
+		var f_lightfrom =  $('#flightfrom-id').val();
+		  var f_lightto =  $('#flightto-id').val();
+		var d_epartdate =  $('#departdate-id').val();
+		var r_eturndate =  $('#returndate-id').val();
+		var p_assangers =  $('#passangers-id').val();
+		   var m_essage =  $('#message-id').val();
 				//var url ='http://localhost/mobile_flytopk/save.php';
-				var url ='http://www.fly2pk.co.uk/save.php';
+				var url ='http://www.fly2pk.co.uk/email.php';
 				$.ajax(url,{
 						data: {					
-									   email: e_mail,
-									username: u_sername,
-									password: p_assword
+									   email:e_mail,
+									    name:n_ame,
+								  flightfrom:f_lightfrom,
+								    flightto:f_lightto,
+								  departdate:d_epartdate,
+								  returndate:r_eturndate,
+								  passangers:p_assangers,
+				 			 	     message:m_essage
 						},//data
 						type: "POST",
 						success: function(data){
@@ -81,65 +109,3 @@
 	});//end of onclick button or submit form 		
 });//end of document.ready
 </script>
-
-</script>
-<script>
-$(document).ready(function() {
-    $('#btn-chk').click(function() {
-        var email =  $('#email-id').val();
-		alert (email);
-        });
-});</script>
-<script>
-$(document).ready(function() {
-    $('#btn-chk1').click(function() {
-        var username =  $('#username-id').val();
-		alert (username);
-        });
-});</script>
-<script>
-$(document).ready(function() {
-    $('#btn-chk2').click(function() {
-        var password =  $('#password-id').val();
-		alert (password);
-        });
-});</script>
-
-
-
-
-
-
-<script>
-/*$(document).ready(function(){
-	//here we will get the values from the forms
-	$('form').submit(function(){ 
-		var email =  $('#email-id').val();
-		var username =  $('#username-id').val();
-		var password =  $('#password-id').val();
-		
-				var url ='http://localhost/mobile_flytopk/save.php';
-				$.ajax(url,{
-						data: {					
-									email: email,
-									username: username,
-									password: password
-						},//data
-						type: "POST",
-						success: function(data){
-									  alert (data);	
-																		
-					  				
-					  			}
-				});//end of ajax				
-	});//end of onclick button or submit form 		
-});//end of document.ready*/
-</script>
-<script>
-/*$(document).ready(function() {
-    $('#btn-chk').click(function() {
-        var email =  $('#email-id').val();
-		alert (email);
-        });
-});
-*/</script>
